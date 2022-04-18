@@ -1,5 +1,17 @@
 <div>
-    Receips from data: <br>
-    <app-title-component [text]="'Appetizer'"></app-title-component>
+    <app-header-component></app-header-component>
+    <app-title-component [text]="'Appetizers'"></app-title-component>
     <app-slider-component [listToSlide]="recipeList.appetizer"></app-slider-component>
+
+    <app-title-component [text]="'First Courses'"></app-title-component>
+    <app-slider-component [listToSlide]="recipeList.first_course"></app-slider-component>
+
+    <app-title-component [text]="'Main Courses'"></app-title-component>
+    <app-slider-component [listToSlide]="recipeList.main_course"></app-slider-component>
+
+    <app-title-component [text]="'Side Dishes'"></app-title-component>
+    <app-slider-component [listToSlide]="recipeList.side_dish"></app-slider-component>
+
+    <app-title-component [text]="'Desserts'"></app-title-component>
+    <app-slider-component [listToSlide]="recipeList.dessert"></app-slider-component>
 </div>

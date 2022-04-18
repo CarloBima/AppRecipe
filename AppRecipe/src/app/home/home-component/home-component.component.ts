@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HomeRecipesList } from 'src/app/models/home-recipes-list.model';
 import { Ingredient } from 'src/app/models/ingredient.model';
 import { Receipt } from 'src/app/models/receipt.model';
+import { RecipesService } from 'src/app/services/recipe-service/recipes.service';
 
 @Component({
   selector: 'app-home-component',
@@ -10,19 +11,15 @@ import { Receipt } from 'src/app/models/receipt.model';
 })
 export class HomeComponentComponent implements OnInit {
   recipeList: HomeRecipesList = new HomeRecipesList([], [], [], [], []);
-  constructor() {}
+  constructor(
+    private recipeService : RecipesService
+   ) {}
 
   ngOnInit(): void {
-    for (let i = 0; i < 25; i++) {
-      this.recipeList.appetizer.push(
-        new Receipt(
-          i.toString() + '. Tuna and Tomatoes',
-          'Tuna and Tomatoes salad',
-          'A',
-          null,
-          [new Ingredient('Tuna'), new Ingredient('Tomatoes')]
-        )
-      );
-    }
+    this.recipeList.appetizer = this.recipeService.getRecipes('A');
+    this.recipeList.first_course = this.recipeService.getRecipes('F');
+    this.recipeList.main_course = this.recipeService.getRecipes('M');
+    this.recipeList.side_dish = this.recipeService.getRecipes('S');
+    this.recipeList.dessert = this.recipeService.getRecipes('D');
   }
 }

@@ -8,14 +8,16 @@ import { HomeComponentComponent } from './home/home-component/home-component.com
 import { TitleComponentComponent } from './home/title-component/title-component.component';
 import { SliderComponentComponent } from './home/slider-component/slider-component.component';
 import { RecipeCoverComponentComponent } from './home/recipe-cover-component/recipe-cover-component.component';
-
+import { HeaderComponent } from './home/header-component/header.component';
+// TODO: Rename File and Classes to delete ComponentComponent or Component.component
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponentComponent,
     TitleComponentComponent,
     SliderComponentComponent,
-    RecipeCoverComponentComponent
+    RecipeCoverComponentComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

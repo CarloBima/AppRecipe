@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TitleComponentComponent implements OnInit {
   @Input() text: string = 'LOREM IPSUM';
+  @Input() dimension: number = 3; // number from 1 - 6 (h1 => h6) 
   constructor() {}
 
   ngOnInit(): void {}
