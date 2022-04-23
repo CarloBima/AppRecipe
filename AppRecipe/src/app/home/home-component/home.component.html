@@ -1,5 +1,6 @@
 <div>
     <app-header-component></app-header-component>
+
     <app-title-component [text]="'Appetizers'"></app-title-component>
     <app-slider-component [listToSlide]="recipeList.appetizer"></app-slider-component>
 
@@ -14,4 +15,7 @@
 
     <app-title-component [text]="'Desserts'"></app-title-component>
     <app-slider-component [listToSlide]="recipeList.dessert"></app-slider-component>
+
+    <!--TODO: search if its needed the footer or not-->
+    <app-footer-component></app-footer-component>
 </div>

@@ -6,10 +6,10 @@ import { RecipesService } from 'src/app/services/recipe-service/recipes.service'
 
 @Component({
   selector: 'app-home-component',
-  templateUrl: './home-component.component.html',
-  styleUrls: ['./home-component.component.css'],
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
 })
-export class HomeComponentComponent implements OnInit {
+export class HomeComponent implements OnInit {
   recipeList: HomeRecipesList = new HomeRecipesList([], [], [], [], []);
   constructor(
     private recipeService : RecipesService

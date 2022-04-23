@@ -21,4 +21,8 @@ export class UtilityService {
     const splittedPath = filepath.split('/');
     return splittedPath[splittedPath.length - 1];
   }
+
+  public getRandomInt(min: number, max: number):number{
+    return Math.random() * (max - min) + min;
+  }
 }

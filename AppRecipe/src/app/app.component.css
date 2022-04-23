@@ -1,0 +1,14 @@
+.sticky {
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+
+}
+
+.sticky-top {
+  top: 0;
+}
+
+.sticky-bottom {
+  bottom: 0;
+}

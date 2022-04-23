@@ -4,20 +4,21 @@ import { NgModule } from '@angular/core';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 
 import { AppComponent } from './app.component';
-import { HomeComponentComponent } from './home/home-component/home-component.component';
-import { TitleComponentComponent } from './home/title-component/title-component.component';
-import { SliderComponentComponent } from './home/slider-component/slider-component.component';
-import { RecipeCoverComponentComponent } from './home/recipe-cover-component/recipe-cover-component.component';
+import { HomeComponent } from './home/home-component/home.component';
+import { TitleComponent } from './home/title-component/title.component';
+import { SliderComponent } from './home/slider-component/slider.component';
+import { RecipeCoverComponent } from './home/recipe-cover-component/recipe-cover.component';
 import { HeaderComponent } from './home/header-component/header.component';
-// TODO: Rename File and Classes to delete ComponentComponent or Component.component
+import { FooterComponent } from './home/footer-component/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponentComponent,
-    TitleComponentComponent,
-    SliderComponentComponent,
-    RecipeCoverComponentComponent,
-    HeaderComponent
+    HomeComponent,
+    TitleComponent,
+    SliderComponent,
+    RecipeCoverComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

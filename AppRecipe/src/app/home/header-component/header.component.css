@@ -1,8 +1,16 @@
-#headerContainer
-{
-    display: flex;
+#headerContainer {
+  display: flex;
+  /*sticky to the top*/
+  position: sticky;
+  top: 0;
+  z-index: 999999;
+  background-color: white;
 }
-#title, #menu
-{
-    display:inline;
+
+.dis-inl {
+  display: inline;
+}
+
+#menu {
+  display: flex;
 }

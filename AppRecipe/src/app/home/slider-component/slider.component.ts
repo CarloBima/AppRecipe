@@ -4,13 +4,13 @@ import { UtilityService } from 'src/app/services/utility-service/utility.service
 
 @Component({
   selector: 'app-slider-component',
-  templateUrl: './slider-component.component.html',
-  styleUrls: ['./slider-component.component.css'],
+  templateUrl: './slider.component.html',
+  styleUrls: ['./slider.component.css'],
 })
-export class SliderComponentComponent implements OnInit {
+export class SliderComponent implements OnInit {
   @Input() listToSlide: Receipt[] = [];
 
-  screenHeight: number; // final heigh is screenHeight * 0.2 
+  screenHeight: number; // final heigh is screenHeight * 0.2
   screenWidth: number; // final width is screenWidth * 0.9
 
   // fields for carousel
@@ -19,7 +19,7 @@ export class SliderComponentComponent implements OnInit {
   cellWidth: number = 200; // Cell width.
   cellsToShow: number = 3; // The number of cells to display, regardless of the width of the container.
   cellsToScroll: number = 1; //	The number of carousel cells to scroll per arrow click.
-  loop: boolean = false; // Infinite loop.
+  loop: boolean = true; // Infinite loop.
   lightDOM: boolean = true; // Keep a limited number of cells in the DOM tree for an unlimited number of images. As the carousel scrolls, the images will be lazy loaded. This allows you not to overload the browser memory. This mode works only with images passed as an array.
   overflowCellsLimit: number = 3; // The number of carousel cells that will be stored for in the DOM tree outside the scope.
   freeScroll: boolean = false; // The carousel will stop where the touch ended and will not automatically align.
@@ -44,9 +44,12 @@ export class SliderComponentComponent implements OnInit {
 
   // Refer to => https://stackoverflow.com/questions/39888768/how-to-get-height-and-width-of-device-display-in-angular2-using-typescript
   @HostListener('window:resize', ['$event'])
-  getScreenSize(event?) {
+  getScreenSize(event?: any) {
     this.screenHeight = window.innerHeight;
     this.screenWidth = window.innerWidth;
+
+    this.height = window.innerHeight / 25;
+    this.width = window.innerWidth * 0.98;
   }
 
   carouselOnClick(e: any) {
@@ -60,5 +63,8 @@ export class SliderComponentComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getScreenSize(); // resize on init
+    this.autoplayInterval = this.utilityService.getRandomInt(5000, 10000);
+  }
 }

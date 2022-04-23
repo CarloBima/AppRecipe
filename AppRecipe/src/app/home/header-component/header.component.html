@@ -1,6 +1,10 @@
 <div id="headerContainer">
-    <div id="title" style="width: 90%;">
+    <div id="title" style="width: 80%;" class="dis-inl">
         <app-title-component [dimension]="2" [text]="'Welcome Anna'"></app-title-component>
     </div>
-    <div id='menu' style="width: 10%;"><i class="fa-solid fa-circle-plus"></i></div>
+    <h2 id="menu" style="width: 20%" class="dis-inl">
+        <div *ngFor="let item of menuItems" [ngStyle]="item.style">
+            <i [ngClass]="item.icon" aria-hidden="true"></i>
+        </div>
+    </h2>
 </div>
